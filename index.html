@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中国象棋</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">中国象棋</h1>
+        
+        <div class="game-controls">
+            <div class="mode-selector">
+                <button class="mode-btn active" data-mode="human">人人对战</button>
+                <button class="mode-btn" data-mode="ai">人机对战</button>
+            </div>
+            
+            <div class="difficulty-selector" id="difficulty-selector">
+                <span>难度:</span>
+                <select id="difficulty">
+                    <option value="1">1级 - 入门</option>
+                    <option value="2">2级 - 简单</option>
+                    <option value="3">3级 - 普通</option>
+                    <option value="4">4级 - 进阶</option>
+                    <option value="5">5级 - 中等</option>
+                    <option value="6">6级 - 困难</option>
+                    <option value="7">7级 - 专家</option>
+                    <option value="8">8级 - 大师</option>
+                    <option value="9">9级 - 宗师</option>
+                    <option value="10">10级 - 无敌</option>
+                </select>
+            </div>
+            
+            <div class="side-selector" id="side-selector">
+                <span>执子:</span>
+                <button class="side-btn active" data-side="red">红方</button>
+                <button class="side-btn" data-side="black">黑方</button>
+            </div>
+        </div>
+        
+        <div class="board-container">
+            <div class="board" id="board">
+                <div class="coordinates-x">
+                    <span>九</span><span>八</span><span>七</span><span>六</span><span>五</span><span>四</span><span>三</span><span>二</span><span>一</span>
+                </div>
+                <div class="board-grid" id="board-grid"></div>
+                <div class="coordinates-x">
+                    <span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span><span>七</span><span>八</span><span>九</span>
+                </div>
+            </div>
+            
+            <div class="captured-pieces">
+                <div class="captured red-captured">
+                    <span>红方被吃</span>
+                    <div class="captured-list" id="red-captured"></div>
+                </div>
+                <div class="captured black-captured">
+                    <span>黑方被吃</span>
+                    <div class="captured-list" id="black-captured"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="game-info">
+            <div class="turn-info">
+                <span>当前回合:</span>
+                <span class="turn-indicator" id="turn-indicator">红方</span>
+            </div>
+            <div class="status-info" id="status-info">游戏进行中</div>
+            <div class="move-history">
+                <span>步数:</span>
+                <span id="move-count">0</span>
+            </div>
+        </div>
+        
+        <div class="action-controls">
+            <button class="action-btn" id="undo-btn">悔棋</button>
+            <button class="action-btn" id="restart-btn">重来</button>
+            <button class="action-btn" id="swap-btn">交换</button>
+            <button class="action-btn" id="hint-btn">提示</button>
+        </div>
+        
+        <div class="move-list" id="move-list">
+            <h3>走棋记录</h3>
+            <div class="moves" id="moves"></div>
+        </div>
+    </div>
+    
+    <script src="chess.js"></script>
+</body>
+</html>
